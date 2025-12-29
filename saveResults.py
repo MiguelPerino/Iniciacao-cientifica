@@ -1,12 +1,14 @@
 from farthestInsertion import solver as fi_solver
 from main import solver as sm_solver, file_handling
+from nearestInsertion import solver as ni_solver
 
 import os
 import csv
 
 solvers = {
     "FarthestInsertion": fi_solver,
-    "SingleMachine": sm_solver
+    "SingleMachine": sm_solver,
+    "NearestInsertion": ni_solver
 }
 
 pasta_instancias = "instancias"

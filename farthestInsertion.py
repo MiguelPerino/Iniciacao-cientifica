@@ -29,7 +29,7 @@ def solver(R, Pi, Sij):
     seq = [primeiro, segundo]
     visitados = [False] * n
     visitados[primeiro] = True  
-
+    visitados[segundo] = True
     #achar a cidade mais longe entre a sequencia
     while len(seq) < n:
 
@@ -58,7 +58,7 @@ def solver(R, Pi, Sij):
             else:
                 ant = seq[pos - 1]
                 prox = seq[pos]
-                custo = (Sij[ant][new_job] + Pi[new_job] + Sij[new_job][pos] - Sij[ant][prox])
+                custo = (Sij[ant][new_job] + Pi[new_job] + Sij[new_job][prox] - Sij[ant][prox])
 
             if custo < melhor_custo:
                 melhor_custo = custo
@@ -67,6 +67,8 @@ def solver(R, Pi, Sij):
         seq.insert(melhor_pos, new_job)
         visitados[new_job] = True
     
+    #mudanças tsp (que muda do tsp para o problema de engenharia de produção)
+
     return makespan(Sij, Pi, seq), seq
 
 if __name__ == '__main__':
