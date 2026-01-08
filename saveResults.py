@@ -7,12 +7,13 @@ import csv
 
 solvers = {
     "FarthestInsertion": fi_solver,
-    "SingleMachine": sm_solver,
+    "NearestNeighbor": sm_solver,
     "NearestInsertion": ni_solver
 }
 
 pasta_instancias = "instancias"
 instancias = sorted(os.listdir(pasta_instancias))
+
 
 with open("comparacao.csv", "w", newline="") as f:
     writer = csv.writer(f)

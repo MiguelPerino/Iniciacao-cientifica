@@ -21,7 +21,7 @@ def solver(R, Pi, Sij):
         if j != primeiro and Sij[primeiro][j] < melhor: #menor por que queremos a cidade mais perto da primeira
             melhor = Sij[primeiro][j]
             segundo = j 
-    
+         
     seq = [primeiro, segundo]
     visitados = [False] * n
     visitados[primeiro] = True
