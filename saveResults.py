@@ -1,6 +1,7 @@
 from farthestInsertion import solver as fi_solver
 from main import solver as sm_solver, file_handling
 from nearestInsertion import solver as ni_solver
+from cheapestInserton import solver as ci_solver
 
 import os
 import csv
@@ -8,7 +9,8 @@ import csv
 solvers = {
     "FarthestInsertion": fi_solver,
     "NearestNeighbor": sm_solver,
-    "NearestInsertion": ni_solver
+    "NearestInsertion": ni_solver,
+    "CheapestInsertion": ci_solver
 }
 
 pasta_instancias = "instancias"
@@ -27,3 +29,7 @@ with open("comparacao.csv", "w", newline="") as f:
         for nome, metodo in solvers.items():
             mk, seq = metodo(R, Pi, Sij)
             writer.writerow([instancia, nome, mk, seq])
+
+
+
+#

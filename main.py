@@ -115,4 +115,4 @@ def resolve_todas_instancias(pasta_instancias, pasta_solucoes, solver_func):
 
 if __name__ == "__main__":
     # resolve_todas_instancias(r"C:\Users\Win 10\Downloads\SDSTsDP_Data\SDSTsDP_Data\BenchmarkData", "solucoes")
-    resolve_todas_instancias('instancias', 'solucoesSingleMachine', solver)
+    resolve_todas_instancias('instancias', 'solucoesNearestNeighbor', solver)
