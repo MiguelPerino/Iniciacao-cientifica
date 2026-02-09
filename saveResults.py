@@ -2,6 +2,8 @@ from farthestInsertion import solver as fi_solver
 from main import solver as sm_solver, file_handling
 from nearestInsertion import solver as ni_solver
 from cheapestInserton import solver as ci_solver
+from twoOpt import solver as two_solver
+from randomInsertion import solver as random_solver
 
 import os
 import csv
@@ -10,7 +12,9 @@ solvers = {
     "FarthestInsertion": fi_solver,
     "NearestNeighbor": sm_solver,
     "NearestInsertion": ni_solver,
-    "CheapestInsertion": ci_solver
+    "CheapestInsertion": ci_solver,
+    "twoOpt": two_solver,
+    "RandomInsertion": random_solver
 }
 
 pasta_instancias = "instancias"
