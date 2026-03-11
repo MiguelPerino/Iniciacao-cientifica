@@ -1,5 +1,5 @@
 from main import resolve_todas_instancias, makespan
-
+#2opt para nearest neighbor
 def solver(R, Pi, Sij):
     n = R
     melhor_makespan_global = float('inf')
