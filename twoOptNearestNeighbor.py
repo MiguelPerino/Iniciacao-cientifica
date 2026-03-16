@@ -75,4 +75,4 @@ def nearest_neighbor_inicial(n, Sij, inicio=0):
 
 
 if __name__ == '__main__':
-    resolve_todas_instancias('instancias', 'solucoes2Opt', solver)
+    resolve_todas_instancias('instancias', 'solucoes2OptNearestNeighbor', solver)

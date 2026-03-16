@@ -19,6 +19,4 @@ ai depois ordena por ordem de job com menor custo
 pensei em pegar alguma heuristica e fazer um mixed, por exemplo com penalidade_setup escrito acima, fazer com media, maximo e soma por exemplo,
 algo que faça sentido para diminuir o makespan
 
-
-
 '''
