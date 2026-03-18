@@ -1,3 +1,10 @@
+'''
+Preciso atualizar este para analisar todos os resultados
+este é o antigo, nao tem as heuristicas com 2Opt
+falta adicionar elas e comparar para ver qual deu o melhor resultado
+'''
+
+
 import csv
 from collections import defaultdict #cria um dicionário mesmo se nao existe chave ainda, cria vazio
 

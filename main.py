@@ -1,5 +1,8 @@
 import os
 
+#NEAREST NEIGHBOR
+
+
 def file_handling (path_instancia):
     R = None
     Pi = []
