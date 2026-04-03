@@ -5,6 +5,23 @@ falta adicionar elas e comparar para ver qual deu o melhor resultado
 '''
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import csv
 from collections import defaultdict #cria um dicionário mesmo se nao existe chave ainda, cria vazio
 

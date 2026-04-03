@@ -67,7 +67,6 @@ for idx, instancia in enumerate(instancias, 1):
 print()
 print("Gerando arquivo CSV...")
 
-# Cria o CSV no formato pivotado (instâncias nas linhas, algoritmos nas colunas)
 with open("comparacao.csv", "w", newline="", encoding='utf-8') as f:
     writer = csv.writer(f, delimiter=';')
     
@@ -81,9 +80,7 @@ with open("comparacao.csv", "w", newline="", encoding='utf-8') as f:
     
     writer.writerow(header)
     
-    # Processa cada instância
     for instancia in instancias:
-        # Extrai o tamanho da instância
         tamanho = instancia.split('_')[0].replace('N', '') if 'N' in instancia else '0'
         
         # Pega os makespans de todos os algoritmos
