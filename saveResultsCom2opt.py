@@ -35,6 +35,16 @@ solvers = {
     "SPT+2opt": spt_2opt_solver,
 }
 
+# Pares de heurísticas (sem 2opt, com 2opt)
+pares_2opt = [
+    ("FarthestInsertion", "FarthestInsertion+2opt"),
+    ("NearestNeighbor", "NearestNeighbor+2opt"),
+    ("NearestInsertion", "NearestInsertion+2opt"),
+    ("CheapestInsertion", "CheapestInsertion+2opt"),
+    ("RandomInsertion", "RandomInsertion+2opt"),
+    ("SPT", "SPT+2opt"),
+]
+
 pasta_instancias = "instancias"
 instancias = sorted(os.listdir(pasta_instancias))
 
@@ -65,31 +75,32 @@ for idx, instancia in enumerate(instancias, 1):
         }
 
 print()
-print("Gerando arquivo CSV...")
 
-with open("comparacao.csv", "w", newline="", encoding='utf-8') as f:
+# Cria o CSV no formato pivotado
+with open("comparacao.csv", "w", newline="", encoding='utf-8-sig') as f:
     writer = csv.writer(f, delimiter=';')
     
     # Cabeçalho
     nomes_algoritmos = list(solvers.keys())
-    header = ["Instância", "Tamanho"] + nomes_algoritmos + ["Melhor"]
     
-    # Adiciona colunas de GAP para cada algoritmo
-    for nome in nomes_algoritmos:
-        header.append(f"Gap {nome}")
+    # Monta header
+    header = ["Instância", "Tamanho"] + nomes_algoritmos
+    
+    # Adiciona colunas de GAP (melhoria do 2-opt)
+    for sem_2opt, com_2opt in pares_2opt:
+        header.append(f"Melhoria% {sem_2opt}")
     
     writer.writerow(header)
     
+    # Processa cada instância
     for instancia in instancias:
+        # Extrai o tamanho da instância
         tamanho = instancia.split('_')[0].replace('N', '') if 'N' in instancia else '0'
         
         # Pega os makespans de todos os algoritmos
         makespans = {}
         for nome in nomes_algoritmos:
             makespans[nome] = resultados[instancia][nome]['makespan']
-        
-        # Encontra o melhor (menor) makespan
-        melhor_makespan = min(makespans.values())
         
         # Monta a linha com os makespans
         linha = [instancia, tamanho]
@@ -98,24 +109,23 @@ with open("comparacao.csv", "w", newline="", encoding='utf-8') as f:
         for nome in nomes_algoritmos:
             linha.append(makespans[nome])
         
-        # Adiciona o melhor makespan
-        linha.append(melhor_makespan)
-        
-        # Calcula e adiciona os GAPs
-        for nome in nomes_algoritmos:
-            if melhor_makespan == 0:
-                gap = 0.0
+        # Calcula melhoria do 2-opt para cada par
+        for sem_2opt, com_2opt in pares_2opt:
+            mk_sem = makespans[sem_2opt]
+            mk_com = makespans[com_2opt]
+            
+            if mk_sem == 0:
+                melhoria = 0.0
             else:
-                gap = ((makespans[nome] - melhor_makespan) / melhor_makespan) * 100
-            linha.append(f"{gap:.2f}")
+                # Melhoria percentual: (sem_2opt - com_2opt) / sem_2opt * 100
+                melhoria = ((mk_sem - mk_com) / mk_sem) * 100
+            
+            linha.append(f"{melhoria:.2f}")
         
         writer.writerow(linha)
 
 print()
-print("=" * 80)
 print("Arquivo comparacao.csv criado com sucesso!")
-print()
-print("ALGORITMOS TESTADOS:")
 print()
 
 # Separar em com e sem 2-opt

@@ -107,7 +107,7 @@ def resolve_instancia(arq_instancia, arq_solucao, solver_func):
 
 def resolve_todas_instancias(pasta_instancias, pasta_solucoes, solver_func):
     instancias = os.listdir(pasta_instancias)
-    instancias = instancias[0:]
+    instancias = instancias[1:]
     instancias.sort()
     for instancia in instancias:
         arq_instancia = os.path.join(pasta_instancias, instancia)
@@ -117,5 +117,5 @@ def resolve_todas_instancias(pasta_instancias, pasta_solucoes, solver_func):
 
 
 if __name__ == "__main__":
-    # resolve_todas_instancias(r"C:\Users\Win 10\Downloads\SDSTsDP_Data\SDSTsDP_Data\BenchmarkData", "solucoes")
-    resolve_todas_instancias('instancias', 'solucoesNearestNeighbor', solver)
+    resolve_todas_instancias("C:/Users/Win 10/Downloads/SDSTsDP_Data/SDSTsDP_Data/BenchmarkData", 'solucoesNearestNeighbor', solver)
+    # resolve_todas_instancias('instancias', 'solucoesNearestNeighbor', solver)
