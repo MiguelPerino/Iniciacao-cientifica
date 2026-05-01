@@ -107,7 +107,7 @@ def resolve_instancia(arq_instancia, arq_solucao, solver_func):
 
 def resolve_todas_instancias(pasta_instancias, pasta_solucoes, solver_func):
     instancias = os.listdir(pasta_instancias)
-    instancias = instancias[1:]
+    instancias = [arq for arq in instancias if arq.endswith('.txt')]
     instancias.sort()
     for instancia in instancias:
         arq_instancia = os.path.join(pasta_instancias, instancia)

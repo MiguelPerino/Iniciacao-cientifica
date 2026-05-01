@@ -61,4 +61,5 @@ def solver(R, Pi, Sij):
     return makespan(Sij, Pi, seq), seq
 
 if __name__ == '__main__':
-    resolve_todas_instancias('instancias', 'solucoesNearest', solver)
+    # resolve_todas_instancias('instancias', 'solucoesNearest', solver)
+    resolve_todas_instancias("C:/Users/Win 10/Downloads/SDSTsDP_Data/SDSTsDP_Data/BenchmarkData", 'solucoesNearest', solver)

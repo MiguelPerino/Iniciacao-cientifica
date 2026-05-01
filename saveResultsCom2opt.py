@@ -18,7 +18,6 @@ import csv
 
 # Dicionário com TODAS as heurísticas
 solvers = {
-    # Heurísticas ORIGINAIS (sem 2-opt)
     "FarthestInsertion": fi_solver,
     "NearestNeighbor": nn_solver,
     "NearestInsertion": ni_solver,
@@ -26,7 +25,6 @@ solvers = {
     "RandomInsertion": random_solver,
     "SPT": spt_solver,
     
-    # Heurísticas COM 2-opt
     "FarthestInsertion+2opt": fi_2opt_solver,
     "NearestNeighbor+2opt": nn_2opt_solver,
     "NearestInsertion+2opt": ni_2opt_solver,
@@ -45,8 +43,11 @@ pares_2opt = [
     ("SPT", "SPT+2opt"),
 ]
 
-pasta_instancias = "instancias"
-instancias = sorted(os.listdir(pasta_instancias))
+pasta_instancias = "C:/Users/Win 10/Downloads/SDSTsDP_Data/SDSTsDP_Data/BenchmarkData"
+# instancias = sorted(os.listdir(pasta_instancias))
+instancias = os.listdir(pasta_instancias)
+instancias = [arq for arq in instancias if arq.endswith('.txt')]
+instancias.sort()
 
 # Dicionário para armazenar resultados de cada instância
 resultados = {}
@@ -109,15 +110,14 @@ with open("comparacao.csv", "w", newline="", encoding='utf-8-sig') as f:
         for nome in nomes_algoritmos:
             linha.append(makespans[nome])
         
-        # Calcula melhoria do 2-opt para cada par
         for sem_2opt, com_2opt in pares_2opt:
             mk_sem = makespans[sem_2opt]
             mk_com = makespans[com_2opt]
-            
+            print(mk_sem, mk_com)
             if mk_sem == 0:
                 melhoria = 0.0
             else:
-                # Melhoria percentual: (sem_2opt - com_2opt) / sem_2opt * 100
+                
                 melhoria = ((mk_sem - mk_com) / mk_sem) * 100
             
             linha.append(f"{melhoria:.2f}")

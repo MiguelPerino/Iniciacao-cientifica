@@ -51,6 +51,8 @@ def solver(R, Pi, Sij):
 
 
 if __name__ == '__main__':
-    resolve_todas_instancias("instancias", "solucoesCheapestInsertion", solver)
+    # resolve_todas_instancias("instancias", "solucoesCheapestInsertion", solver)
+    resolve_todas_instancias("C:/Users/Win 10/Downloads/SDSTsDP_Data/SDSTsDP_Data/BenchmarkData", 'solucoesCheapestInsertion', solver)
+
 
 
