@@ -1,0 +1,65 @@
+============================================================
+RESULTADOS GERAIS
+============================================================
+
+MEDIA DE MAKESPAN
+FarthestInsertion: 1130.39
+NearestNeighbor: 1130.19
+NearestInsertion: 1130.44
+CheapestInsertion: 1130.04
+RandomInsertion: 1128.49
+SPT: 1210.44
+FarthestInsertion+2opt: 1130.30
+NearestNeighbor+2opt: 1129.81
+NearestInsertion+2opt: 1130.30
+CheapestInsertion+2opt: 1130.00
+RandomInsertion+2opt: 1128.46
+SPT+2opt: 1157.24
+
+VITORIAS (com empate):
+FarthestInsertion: 11.97 | 2.14%
+NearestNeighbor: 19.37 | 3.46%
+NearestInsertion: 21.47 | 3.83%
+CheapestInsertion: 20.47 | 3.66%
+RandomInsertion: 191.69 | 34.23%
+SPT: 0.00 | 0.00%
+FarthestInsertion+2opt: 11.97 | 2.14%
+NearestNeighbor+2opt: 42.85 | 7.65%
+NearestInsertion+2opt: 23.20 | 4.14%
+CheapestInsertion+2opt: 20.80 | 3.71%
+RandomInsertion+2opt: 196.22 | 35.04%
+SPT+2opt: 0.00 | 0.00%
+
+GAP MEDIO (%):
+FarthestInsertion: 0.39%
+NearestNeighbor: 0.31%
+NearestInsertion: 0.37%
+CheapestInsertion: 0.34%
+RandomInsertion: 0.07%
+SPT: 7.30%
+FarthestInsertion+2opt: 0.37%
+NearestNeighbor+2opt: 0.22%
+NearestInsertion+2opt: 0.34%
+CheapestInsertion+2opt: 0.33%
+RandomInsertion+2opt: 0.06%
+SPT+2opt: 2.53%
+
+RANKING MEDIO:
+FarthestInsertion: 5.27
+NearestNeighbor: 5.53
+NearestInsertion: 5.64
+CheapestInsertion: 5.19
+RandomInsertion: 2.22
+SPT: 12.00
+FarthestInsertion+2opt: 7.02
+NearestNeighbor+2opt: 6.21
+NearestInsertion+2opt: 7.32
+CheapestInsertion+2opt: 6.99
+RandomInsertion+2opt: 3.61
+SPT+2opt: 11.00
+
+MELHORES METODOS:
+Menor media: RandomInsertion+2opt
+Mais vitorias: RandomInsertion+2opt
+Menor GAP: RandomInsertion+2opt
+Melhor ranking: RandomInsertion

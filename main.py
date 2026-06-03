@@ -58,7 +58,7 @@ def solver(R, Pi, Sij):
             for j in range(len(Sij)):
                 if visitados[j] == False:
                 
-                    custo_cada_tarefa = Sij[atual][j] 
+                    custo_cada_tarefa = Sij[atual][j] + Pi[i]
                     if custo_cada_tarefa < melhor_custo:
                         melhor_custo = custo_cada_tarefa
                         melhor_prox_tarefa = j

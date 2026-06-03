@@ -127,13 +127,3 @@ with open("comparacao.csv", "w", newline="", encoding='utf-8-sig') as f:
 print()
 print("Arquivo comparacao.csv criado com sucesso!")
 print()
-
-# Separar em com e sem 2-opt
-print("SEM 2-opt:")
-for i, nome in enumerate([k for k in solvers.keys() if '+2opt' not in k], 1):
-    print(f"  {i}. {nome}")
-
-print()
-print("COM 2-opt:")
-for i, nome in enumerate([k for k in solvers.keys() if '+2opt' in k], 1):
-    print(f"  {i}. {nome}")

@@ -50,11 +50,11 @@ def aplicar_2opt(sequencia, Sij, Pi, makespan_func):
         melhor_valor = melhor_makespan
 
         for i in range(n - 1):
-            for j in range(i + 1, n):
+            for j in range(i + 2, n):
 
                 nova_seq = (
-                    melhor_seq[:i] +
-                    melhor_seq[i:j+1][::-1] +
+                    melhor_seq[:i+1] +
+                    melhor_seq[i+1:j+1][::-1] +
                     melhor_seq[j+1:]
                 )
 
